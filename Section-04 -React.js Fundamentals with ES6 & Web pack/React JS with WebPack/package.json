@@ -1,7 +1,7 @@
 {
   "name": "webpack-tutorial",
   "version": "0.1.0",
-  "description": "An opinionated webpack crash course",
+  "description": "An opinionated webpack  course",
   "main": "src/index.js",
   "dependencies": {
     "autoprefixer-loader": "^1.2.0",
@@ -25,13 +25,13 @@
   "keywords": [
     "webpack"
   ],
-  "author": "Erik Simmler <tgecho@gmail.com> (https://github.com/tgecho/)",
+  "author": "TKS",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tgecho/webpack-tutorial"
+    "url": "https://github.com"
   },
   "bugs": {
-    "url": "https://github.com/tgecho/webpack-tutorial/issues"
+    "url": "https://github.com"
   },
   "license": "MIT"
 }
