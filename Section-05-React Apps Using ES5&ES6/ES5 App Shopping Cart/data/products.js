@@ -46,5 +46,13 @@ var productsCollection = [
     currency: 'EUR',
     image: 'images/03.jpg',
     url: 'http://www.home24.de/re-concept/sessel-anna-stoff-olivgruen-779539'
+  },
+   {
+    id: 9,
+    name: 'United Color beniton',
+    price: 499.99,
+    currency: 'EUR',
+    image: 'images/01.jpg',
+    url: 'http://static6.shop.indiatimes.com/images/products/additional/original/B4529577_View_4/fashion/sports/adidas-grey-and-orange-men-sports-shoes-s44999.jpg'
   }
 ]

@@ -7,6 +7,7 @@ export default class Nav extends React.Component {
     this.state = {
       collapsed: true,
     };
+       this.toggleCollapse =  this.toggleCollapse.bind(this)
   }
 
   toggleCollapse() {
@@ -26,7 +27,7 @@ export default class Nav extends React.Component {
       <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
           <div class="navbar-header">
-            <button type="button" class="navbar-toggle" onClick={this.toggleCollapse.bind(this)} >
+            <button type="button" class="navbar-toggle" onClick={this.toggleCollapse} >
               <span class="sr-only">Toggle navigation</span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
@@ -36,13 +37,13 @@ export default class Nav extends React.Component {
           <div class={"navbar-collapse " + navClass} id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
               <li class={featuredClass}>
-                <IndexLink to="/" onClick={this.toggleCollapse.bind(this)}>Featured</IndexLink>
+                <IndexLink to="/" onClick={this.toggleCollapse}>Featured</IndexLink>
               </li>
               <li class={archivesClass}>
-                <Link to="archives" onClick={this.toggleCollapse.bind(this)}>Archives</Link>
+                <Link to="archives" onClick={this.toggleCollapse}>Archives</Link>
               </li>
               <li class={settingsClass}>
-                <Link to="settings" onClick={this.toggleCollapse.bind(this)}>Settings</Link>
+                <Link to="settings" onClick={this.toggleCollapse}>Settings</Link>
               </li>
             </ul>
           </div>
