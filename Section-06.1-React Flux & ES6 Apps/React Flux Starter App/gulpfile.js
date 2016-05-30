@@ -5,17 +5,13 @@ var source = require('vinyl-source-stream');
 var uglify  = require('gulp-uglify');
 var concat = require('gulp-concat');
 var minify = require('gulp-minify-css');
-var browserSync = require('browser-sync');
 
-
-const sync = browserSync.create();
 gulp.task('browserify', function() {
     browserify('./src/js/main.js') // ES6 only
       .transform('reactify') // es6 TO es5
       .bundle()
       .pipe(source('main.js'))
-      .pipe(gulp.dest('dist/js'))
-      .pipe(sync.reload);
+      .pipe(gulp.dest('dist/js'));
 });
 
 gulp.task('copy',function() {
@@ -31,7 +27,6 @@ gulp.task('css', function(){
     .pipe(concat('style.css'))
     .pipe(minify({ keepBreaks: true }))
     .pipe(gulp.dest('dist/css/'));
-    .pipe(sync.reload);
 
 });
 

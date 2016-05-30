@@ -7,7 +7,6 @@ function getCatalog(){
 }
 
 var Catalog = React.createClass({
-
 	getInitialState:function(){
 		return getCatalog()
 	},

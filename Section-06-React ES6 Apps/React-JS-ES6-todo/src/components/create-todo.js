@@ -8,13 +8,10 @@ export default class TodosList extends React.Component {
             error: null
         };
     }
-
     renderError() {
         if (!this.state.error) { return null; }
-
         return <div style={{ color: 'red' }}>{this.state.error}</div>;
     }
-
     render() {
         return (
             <form onSubmit={this.handleCreate.bind(this)}>
@@ -29,7 +26,7 @@ export default class TodosList extends React.Component {
         event.preventDefault();
 
         const createInput = this.refs.createInput;
-        const task = createInput.value;
+        const task = event.target.value;
         const validateInput = this.validateInput(task);
 
         if (validateInput) {

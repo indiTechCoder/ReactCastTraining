@@ -20416,8 +20416,8 @@ module.exports = require('./lib/React');
 },{"./lib/React":33}],161:[function(require,module,exports){
 var AppConstants=require("../constants/app-constants");
 var AppDispatcher=require("../dispatchers/app-dispatcher");
-
 var AppActions={
+	
 	addItem:function(item){
 		AppDispatcher.handleViewAction({
 			actionType:AppConstants.ADD_ITEM,
@@ -20452,11 +20452,11 @@ var AppActions=require('../actions/app-actions');
 
 var AddToCart = React.createClass({displayName: "AddToCart",
 	handler:function(){
-       AppActions.addItem(this.props.item)
+		AppActions.addItem(this.props.item)
 	},
-  render:function(){
-    return React.createElement("button", {onClick: this.handler}, "Add To Cart")
-  }
+	render:function(){
+		return React.createElement("button", {className: "btn btn-primary", onClick: this.handler}, "Add To Cart")
+	}
 });
 
 module.exports = AddToCart;
@@ -20537,7 +20537,6 @@ function getCatalog(){
 }
 
 var Catalog = React.createClass({displayName: "Catalog",
-
 	getInitialState:function(){
 		return getCatalog()
 	},
