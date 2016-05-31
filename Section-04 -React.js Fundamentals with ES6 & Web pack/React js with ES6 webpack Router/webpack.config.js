@@ -1,4 +1,6 @@
 var debug = process.env.NODE_ENV !== "production";
+var port = process.env.PORT || 8080;
+
 var webpack = require('webpack');
 var path = require('path');
 
@@ -18,6 +20,10 @@ module.exports = {
         }
       }
     ]
+  },
+   devServer: {
+    inline: true,
+    port: port
   },
   output: {
     path: __dirname + "/src/",

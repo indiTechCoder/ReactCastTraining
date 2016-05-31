@@ -1,5 +1,5 @@
 import React from 'react'
-import NavLink from './NavLink'
+import { Link } from 'react-router'
 
 export default class  {
   render() {
@@ -7,8 +7,8 @@ export default class  {
       <div>
         <h1>React Router Tutorial</h1>
         <ul role="nav">
-          <li><NavLink to="/about">About</NavLink></li>
-          <li><NavLink to="/repos">Repos</NavLink></li>
+          <li><Link to="/about">About</Link></li>
+          <li><Link to="/repos">Repos</Link></li>
         </ul>
         {this.props.children}
       </div>
