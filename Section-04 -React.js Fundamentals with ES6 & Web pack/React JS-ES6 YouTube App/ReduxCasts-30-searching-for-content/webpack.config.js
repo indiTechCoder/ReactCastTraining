@@ -17,6 +17,8 @@ module.exports = {
     extensions: ['', '.js', '.jsx']
   },
   devServer: {
-    contentBase: './'
+    inline: true,
+    contentBase: './',
+    port: 8082
   }
 };

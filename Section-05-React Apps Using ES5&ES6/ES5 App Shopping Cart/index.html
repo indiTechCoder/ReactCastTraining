@@ -34,9 +34,7 @@
       </div>
 
       <footer>
-        <small>
-          made by <a href="https://twitter.com/krzysu">Kris Urbas</a>, source code available on <a href="https://github.com/krzysu/reactjs-shopping-cart">github</a>
-        </small>
+
       </footer>
     </div>
 
@@ -49,7 +47,11 @@
     <script type="text/jsx">
       /** @jsx React.DOM */
       React.renderComponent(<ProductsList data={productsCollection} />, document.getElementById('products-list'));
+
+
       React.renderComponent(<Cart />, document.getElementById('cart'));
+
+      
     </script>
   </body>
 </html>

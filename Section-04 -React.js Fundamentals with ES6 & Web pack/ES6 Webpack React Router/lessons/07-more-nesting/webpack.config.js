@@ -1,3 +1,4 @@
+var port = process.env.PORT || 8080;
 module.exports = {
   entry: './index.js',
 
@@ -10,5 +11,11 @@ module.exports = {
     loaders: [
       { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader?presets[]=es2015&presets[]=react' }
     ]
+  },
+   devServer: {
+    inline: true,
+    contentBase: './',
+    port: port
   }
 }
+ 
