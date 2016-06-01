@@ -7,7 +7,6 @@ function receiveProducts(products) {
     products: products
   }
 }
-
 export function getAllProducts() {
   return dispatch => {
     shop.getProducts(products => {
@@ -15,7 +14,6 @@ export function getAllProducts() {
     })
   }
 }
-
 function addToCartUnsafe(productId) {
   return {
     type: types.ADD_TO_CART,
@@ -34,7 +32,6 @@ export function addToCart(productId) {
 export function checkout(products) {
   return (dispatch, getState) => {
     const cart = getState().cart
-
     dispatch({
       type: types.CHECKOUT_REQUEST
     })

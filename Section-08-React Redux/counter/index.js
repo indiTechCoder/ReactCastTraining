@@ -6,6 +6,7 @@ import counter from './reducers'
 
 const store = createStore(counter)
 const rootEl = document.getElementById('root')
+console.log(store.getState());
 
 function render() {
   ReactDOM.render(

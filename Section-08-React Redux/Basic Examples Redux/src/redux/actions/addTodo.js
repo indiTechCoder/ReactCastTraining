@@ -5,7 +5,7 @@ let nextTodoId = 0;
 const addTodo = (text) => {
   return {
     type: ADD_TODO,
-    id: nextTodoId++,
+     data : response
     text
   };
 };
