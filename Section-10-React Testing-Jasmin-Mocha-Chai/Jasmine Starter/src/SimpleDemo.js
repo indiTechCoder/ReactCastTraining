@@ -7,7 +7,7 @@ describe('JavaScript addition operator', function () {
 
 describe('JavaScript addition operator', function () {
     it('adds two numbers together for failure case', function () {
-        expect(1 + 8).toEqual(6);
+        expect(1 + 8).toEqual(9);
     });
 });
 

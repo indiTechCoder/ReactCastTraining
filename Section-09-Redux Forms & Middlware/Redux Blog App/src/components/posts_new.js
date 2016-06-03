@@ -4,6 +4,13 @@ import { createPost } from '../actions/index';
 import { Link } from 'react-router';
 
 class PostsNew extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      error : { message : ''};
+    }
+
+  }
   static contextTypes = {
     router: PropTypes.object
   };
@@ -15,6 +22,8 @@ class PostsNew extends Component {
         // We navigate by calling this.context.router.push with the
         // new path to navigate to.
         this.context.router.push('/');
+      }, function(){
+         this.setState({ error.message = 'failure occured ....'});
       });
   }
 
@@ -51,6 +60,7 @@ class PostsNew extends Component {
 
         <button type="submit" className="btn btn-primary">Submit</button>
         <Link to="/" className="btn btn-danger">Cancel</Link>
+        {this.state.error.message}
       </form>
     );
   }
@@ -58,7 +68,6 @@ class PostsNew extends Component {
 
 function validate(values) {
   const errors = {};
-
   if (!values.title) {
     errors.title = 'Enter a username';
   }

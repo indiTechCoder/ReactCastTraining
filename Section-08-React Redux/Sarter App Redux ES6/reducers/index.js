@@ -1,10 +1,10 @@
-export default function counter(state = 0, action) {
-  switch (action.type) {
-    case 'INCREMENT':
-      return state + 1
-    case 'DECREMENT':
-      return state - 1
-    default:
-      return state
-  }
-}
+import {combineReducer } from 'redux';
+import PostReducer from './reducer_post',
+import {reducer as FormReducer} from 'redux-form'
+
+const rootReducer = combineReducer({
+	Posts : PostReducer,
+	form : FormReducer
+});
+
+export default rootReducer;
