@@ -2,8 +2,8 @@ var React=require('react');
 var ReactDOM = require('react-dom');
 var TestUtils=require('react-addons-test-utils');
 // jest librray to test react comp
-var Component=require('./com.react');
-var DemoApp=require('./demoapp');
+var Component=require('./src/hello');
+var DemoApp=require('./src/demoApp');
 
 
 describe("test AppComponent  props",function(){
@@ -21,32 +21,6 @@ describe("test AppComponent  props",function(){
    expect(containercomp.length).toEqual(1);
 });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 describe("test helloworld props",function(){
   beforeEach(function() {

@@ -1,16 +1,14 @@
-describe('#find()', ()=> {
+var expect = require('chai').expect;
 
-beforeEach(()=>) {
-  return db.clear()
-    .then(function() {
-      return db.save([tobi, loki, jane]);
-    });
-});
-
-describe('#find()', ()=> {
-  it('respond with matching records', function() {
-    return db.find({ type: 'User' }).should.eventually.have.length(3);
+describe("A spec (with setup and tear-down)", function() {
+  it("is just a function, so it can contain any code", function() {
+    expect(1).toEqual(1);
   });
-});
 
+  it("can have more than one expectation", function() {
+    expect(1).toEqual(1);
+    expect(true).toEqual(true);
+  });
+
+  
 });

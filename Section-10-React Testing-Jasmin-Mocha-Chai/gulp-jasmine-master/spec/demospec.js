@@ -1,15 +1,13 @@
-var multiply = require('./src/multiply');
-
 
 describe('multiply', function(){
   it('Multiplies two numbers', function(){
-    expect(multiply(2,3)).toEqual(6);
+    expect((2+3)).toEqual(5);
   });
 });
 
 describe('multiply', function(){
   it('Multiplies two numbers', function(){
-    expect(multiply(2,3)).toEqual(6);
+    expect((4+4)).toEqual(8);
   });
 });
 

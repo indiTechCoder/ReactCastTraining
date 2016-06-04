@@ -22,7 +22,7 @@ gulp.task('jasmine_unitTesting', function () {
 });
 
 gulp.task('watch', function () {
-	gulp.watch('./*.js',['jasmine_unitTesting']);
+	gulp.watch('./**/*.js',['jasmine_unitTesting']);
 });
 
-gulp.task('default', ['webserver','watch']);
+gulp.task('default', ['webserver','watch','jasmine_unitTesting']);
