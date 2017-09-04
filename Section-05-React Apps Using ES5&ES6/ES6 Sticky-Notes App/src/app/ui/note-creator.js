@@ -37,15 +37,15 @@ export default class NoteCreator extends React.Component {
 
   render() {
     return (
-      <div class="note-creator shadow-2" [ngStyle]="{'background-color': newNote.color}">
-        <form class="row" (ngSubmit)="onCreateNote()">
+      <div className="note-creator shadow-2" [ngStyle]="{'background-color': newNote.color}">
+        <form className="row" (ngSubmit)="onCreateNote()">
           <input
             type="text"
             (focus)="toggle(true)"
             [(ngModel)]="newNote.title"
             name="newNoteTitle"
             placeholder="Create Sticky Notes"
-            class="col-xs-10 title"
+            className="col-xs-10 title"
             *ngIf="fullForm"
           >
           <input
@@ -54,7 +54,7 @@ export default class NoteCreator extends React.Component {
             [(ngModel)]="newNote.value"
             name="newNoteValue"
             placeholder="sticky Header"
-            class="col-xs-10"
+            className="col-xs-10"
           >
           <input *ngIf="fullForm"
             type="text"
@@ -62,14 +62,14 @@ export default class NoteCreator extends React.Component {
             [(ngModel)]="newNote.description"
             name="newNoteDescription"
             placeholder="sticky text"
-            class="col-xs-10"
+            className="col-xs-10"
           >
-          <div class="actions col-xs-12 row between-xs" *ngIf="fullForm">
-            <div class="col-xs-3">
+          <div className="actions col-xs-12 row between-xs" *ngIf="fullForm">
+            <div className="col-xs-3">
             </div>
             <button
               type="submit"
-              class="btn-light"
+              className="btn-light"
              >
               Done
             </button>

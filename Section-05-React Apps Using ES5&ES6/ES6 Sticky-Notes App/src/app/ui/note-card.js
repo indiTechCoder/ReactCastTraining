@@ -15,18 +15,18 @@ export default class NoteCard extends React.Component {
   render() {
     return (
       <div
-        class="note-card row shadow-1"
+        className="note-card row shadow-1"
         [ngStyle]="{'background-color': note.color}"
         (mouseenter)="toggleCheck()"
         (mouseleave)="toggleCheck()"
       >
-        <div class="icon" *ngIf="showCheck" (click)="onChecked()">
-          <i class="material-icons">check</i>
+        <div className="icon" *ngIf="showCheck" (click)="onChecked()">
+          <i className="material-icons">check</i>
         </div>
-        <div class="col-xs-12 title">
+        <div className="col-xs-12 title">
           {{ note.title }}
         </div>
-        <div class="col-xs-12 value">
+        <div className="col-xs-12 value">
           {{ note.value }}
         </div>
       </div>

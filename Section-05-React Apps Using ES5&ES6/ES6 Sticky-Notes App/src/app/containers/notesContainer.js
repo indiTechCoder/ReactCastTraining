@@ -24,14 +24,14 @@ export default class notesContainer extends Component {
 
   render() {
     return (
-      <div class="row center-xs notes">
-        <div class="col-xs-6 creator">
+      <div className="row center-xs notes">
+        <div className="col-xs-6 creator">
           <NotesCreator (createNote)="onCreateNote($event)"></NotesCreator>
         </div>
-        <div class="notes col-xs-8">
-          <div class="row between-xs">
+        <div className="notes col-xs-8">
+          <div className="row between-xs">
             <NoteCard
-              class="col-xs-4"
+              className="col-xs-4"
               [note]="note"
               *ngFor="let note of notes; let i = index"
               (checked)="onNoteChecked($event, i)"

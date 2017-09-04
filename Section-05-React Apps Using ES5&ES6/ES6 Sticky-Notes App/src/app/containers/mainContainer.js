@@ -5,9 +5,9 @@ import AppBar from '../ui/app.bar';
 export default class mainContainer extends Component {
   render() {
     return (
-      <div class="main-container">
+      <div className="main-container">
         <AppBar></AppBar>
-        <main class="main">
+        <main className="main">
           <NotesContainer></NotesContainer>
         </main>
       </div>
