@@ -1,0 +1,74 @@
+body {
+  font-size: 18px;
+  background-color: rgba(204, 204, 204, 0.41);
+  font-family: "Roboto", sans-serif !important;
+  margin: 0px;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  font-family: "Roboto", sans-serif !important;
+  font-weight: 500;
+  line-height: 1.1;
+  margin-top: 5px !important;
+  margin-bottom: 5px !important;
+  color: inherit;
+}
+.app-bar {
+  height: 65px;
+  padding: 5px 30px;
+   background-color: #d400ba;;
+}
+.logo {
+  color: white;
+  font-size: 30px;
+  font-weight: 300;
+  cursor: pointer;
+}
+.link {
+  color: white;
+  font-size: 24px;
+  font-weight: 400;
+  cursor: pointer;
+}
+.note-card {
+  padding: 15px;
+  border-radius: 2px;
+  width: 100%;
+  position: relative;
+}
+.title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: left;
+  color: rgba(0,0,0,0.8);
+}
+.value {
+  text-align: left;
+  font-size: 1.4rem;
+  font-weight: 200;
+}
+.icon {
+  position: absolute;
+  color: black;
+  border: 1px solid lightgrey;
+  background-color: white;
+  font-size: 30px;
+  top: -10px;
+  left: -10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  cursor: pointer;
+}
+.note-creator {
+  padding: 20px;
+  background-color: white;
+  border-radius: 3px;
+}
+.title {
+  font-weight: bold;
+  color: rgba(0,0,0,0.8);
+}
+.full {
+  height: 100px;
+}
