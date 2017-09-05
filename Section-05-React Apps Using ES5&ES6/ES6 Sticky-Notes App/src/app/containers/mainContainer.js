@@ -1,16 +1,19 @@
-import { React } from 'react';
-import NotesContainer from './notesContainer';
-import AppBar from '../ui/app.bar';
+import React from 'react';
+import { Component } from 'react';
 
-export default class mainContainer extends Component {
+import NotesContainer from './notesContainer';
+import AppBar from '../ui/app-bar';
+
+class MainContainer extends Component {
   render() {
     return (
       <div className="main-container">
         <AppBar></AppBar>
-        <main className="main">
+        <div className="main">
           <NotesContainer></NotesContainer>
-        </main>
+        </div>
       </div>
     );
   }
 }
+export default  MainContainer ;

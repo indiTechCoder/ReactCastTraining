@@ -1,10 +1,15 @@
-import { React } from 'react';
+import React from 'react';
+import { Component } from 'react';
 
-export default class NoteCard extends React.Component {
-  constructor(){
+
+class NoteCard extends Component {
+  constructor(props){
+    super(props);
+
       this.state = {
         showCheck  : false
       }
+      this.toggleCheck = this.toggleCheck.bind(this);
   }
   toggleCheck() {
     this.showCheck = !this.showCheck;
@@ -16,20 +21,21 @@ export default class NoteCard extends React.Component {
     return (
       <div
         className="note-card row shadow-1"
-        [ngStyle]="{'background-color': note.color}"
-        (mouseenter)="toggleCheck()"
-        (mouseleave)="toggleCheck()"
+        onMouseEnter={this.toggleCheck}
+        onMouseLeave={this.toggleCheck}
       >
-        <div className="icon" *ngIf="showCheck" (click)="onChecked()">
+        <div className="icon">
           <i className="material-icons">check</i>
         </div>
         <div className="col-xs-12 title">
-          {{ note.title }}
+          { this.props.note.title }
         </div>
         <div className="col-xs-12 value">
-          {{ note.value }}
+          {this.props.note.value }
         </div>
       </div>
     );
   }
 }
+
+export default NoteCard;

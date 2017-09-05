@@ -1,16 +1,19 @@
 
-import React from 'react';
-import { Component } from 'react';
-import '../../style/style.scss';
+import ReactDOM from 'react-dom';
+import React,{ Component } from 'react';
+
+import '../../style/style.css';
 import MainContainer from './containers/mainContainer';
+
+
 
 
 export default class App extends Component {
   render() {
     return (
-      <div>
         <MainContainer></MainContainer>
-      </div>
     );
   }
 }
+
+ReactDOM.render(<App /> , document.getElementById("app"));

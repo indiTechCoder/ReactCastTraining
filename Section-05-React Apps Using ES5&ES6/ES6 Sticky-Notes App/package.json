@@ -8,8 +8,8 @@
     "scss-compile": "node-sass  public/css/main.scss -o public/css/",
     "watch-css": "nodemon -e scss -x \"npm run scss-compile\"",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --w",
-    "start": "node server.js"
+    "build": "webpack --color --progress --w",
+    "start": "webpack-dev-server --color --progress"
   },
   "author": "",
   "license": "ISC",

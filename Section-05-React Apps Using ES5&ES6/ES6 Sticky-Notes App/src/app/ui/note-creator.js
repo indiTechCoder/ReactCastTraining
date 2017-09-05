@@ -1,12 +1,15 @@
-import { React } from 'react';
+import React from 'react';
+import { Component } from 'react';
 
-export default class NoteCreator extends React.Component {
-  constructor(){
+ class NoteCreator extends Component {
+  constructor(props){
+    super(props)
       this.state = {
           title: '',
           value: '',
           color: 'white'
         };
+        this.onCreateNote = this.onCreateNote.bind(this);
   }
   onCreateNote() {
     const { title, value, color } = this.state;
@@ -37,34 +40,23 @@ export default class NoteCreator extends React.Component {
 
   render() {
     return (
-      <div className="note-creator shadow-2" [ngStyle]="{'background-color': newNote.color}">
-        <form className="row" (ngSubmit)="onCreateNote()">
+      <div className="note-creator shadow-2">
+        <form className="row" onSubmit={this.onCreateNote}>
           <input
             type="text"
-            (focus)="toggle(true)"
-            [(ngModel)]="newNote.title"
+            onFocus={this.toggle(true)}
             name="newNoteTitle"
             placeholder="Create Sticky Notes"
             className="col-xs-10 title"
-            *ngIf="fullForm"
-          >
+          />
           <input
             type="text"
-            (focus)="toggle(true)"
-            [(ngModel)]="newNote.value"
+            onFocus={this.toggle(true)}
             name="newNoteValue"
             placeholder="sticky Header"
             className="col-xs-10"
-          >
-          <input *ngIf="fullForm"
-            type="text"
-            (focus)="toggle(true)"
-            [(ngModel)]="newNote.description"
-            name="newNoteDescription"
-            placeholder="sticky text"
-            className="col-xs-10"
-          >
-          <div className="actions col-xs-12 row between-xs" *ngIf="fullForm">
+          />
+          <div className="actions col-xs-12 row between-xs">
             <div className="col-xs-3">
             </div>
             <button
@@ -79,3 +71,5 @@ export default class NoteCreator extends React.Component {
     );
   }
 }
+
+export default NoteCreator;

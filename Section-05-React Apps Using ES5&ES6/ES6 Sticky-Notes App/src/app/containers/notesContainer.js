@@ -1,7 +1,10 @@
-import { React } from 'react';
+import React from 'react';
+import { Component } from 'react';
+
 import NoteCard from '../ui/note-card';
 import NotesCreator from '../ui/note-creator';
-export default class notesContainer extends Component {
+
+ class NotesContainer extends Component {
 
   constructor(props){
     super(props);
@@ -10,8 +13,9 @@ export default class notesContainer extends Component {
       {title: 'Chores', value: 'Don\'t forget to clean up', color: 'white'},
       {title: 'Food', value: 'meal prep tonight please!', color: 'white'},
       {title: 'Shipping Number', value: '#234654hhd88', color: 'white'}
-    ];
-  }
+     ]
+   }
+ }
   onNoteChecked(note, i) {
     this.state.notes.splice(i, 1);
     this.setState({notes: this.state.notes});
@@ -26,16 +30,11 @@ export default class notesContainer extends Component {
     return (
       <div className="row center-xs notes">
         <div className="col-xs-6 creator">
-          <NotesCreator (createNote)="onCreateNote($event)"></NotesCreator>
+          <NotesCreator></NotesCreator>
         </div>
         <div className="notes col-xs-8">
-          <div className="row between-xs">
-            <NoteCard
-              className="col-xs-4"
-              [note]="note"
-              *ngFor="let note of notes; let i = index"
-              (checked)="onNoteChecked($event, i)"
-            >
+          <div className="row cards between-xs">
+            <NoteCard note={this.state.notes[0]} className="col-xs-4">
             </NoteCard>
           </div>
         </div>
@@ -43,3 +42,4 @@ export default class notesContainer extends Component {
     );
   }
 }
+export default NotesContainer;
