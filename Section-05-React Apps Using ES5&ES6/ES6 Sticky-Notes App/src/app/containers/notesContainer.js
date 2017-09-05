@@ -15,6 +15,7 @@ import NotesCreator from '../ui/note-creator';
       {title: 'Shipping Number', value: '#234654hhd88', color: 'white'}
      ]
    }
+   this.onCreateNote = this.onCreateNote.bind(this);
  }
   onNoteChecked(note, i) {
     this.state.notes.splice(i, 1);
@@ -25,17 +26,22 @@ import NotesCreator from '../ui/note-creator';
     this.state.notes.push(note);
     this.setState({notes: this.state.notes});
   }
+  renderCards(){
+    return this.state.notes.map(function(_card){
+      return (<NoteCard note={_card} className="col-xs-4" />
+      );
+    });
+  }
 
   render() {
     return (
       <div className="row center-xs notes">
         <div className="col-xs-6 creator">
-          <NotesCreator></NotesCreator>
+          <NotesCreator onCreateNote={this.onCreateNote}></NotesCreator>
         </div>
         <div className="notes col-xs-8">
-          <div className="row cards between-xs">
-            <NoteCard note={this.state.notes[0]} className="col-xs-4">
-            </NoteCard>
+          <div className="row cards">
+          {this.renderCards()}
           </div>
         </div>
       </div>

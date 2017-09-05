@@ -6,16 +6,17 @@ import { Component } from 'react';
     super(props)
       this.state = {
           title: '',
-          value: '',
-          color: 'white'
+          value: ''
         };
         this.onCreateNote = this.onCreateNote.bind(this);
+        this.titleChange = this.titleChange.bind(this);
+        this.headerChange = this.headerChange.bind(this);
   }
   onCreateNote() {
-    const { title, value, color } = this.state;
+    const { title, value } = this.state;
 
     if (title && value) {
-      this.createNote.next({ title, value, color });
+      this.createNote.next({ title, value });
     }
 
     this.reset();
@@ -25,25 +26,38 @@ import { Component } from 'react';
   reset() {
     this.setState ({
       title: '',
-      value: '',
-      color: 'white'
-    });
-  }
+      value: ''
+     });
+   }
+    toggle(value) {
+      this.fullForm = value;
+    }
+    titleChange(e) {
+       this.setState({title: e.target.value});
+    }
+    headerChange(e) {
+       this.setState({value: e.target.value});
+    }
+    onCreateNote(){
+      e.preventDefault();
+      e.stopPropagation()
+      console.log(this.state.title);
+      console.log(this.state.value);
 
-  toggle(value) {
-    this.fullForm = value;
-  }
-
-  onColorSelect(color) {
-    this.newNote.color = color;
-  }
+      this.props.onCreateNote({
+        title: this.state.title,
+        value: this.state.value
+       })
+    }
 
   render() {
     return (
       <div className="note-creator shadow-2">
-        <form className="row" onSubmit={this.onCreateNote}>
+        <form ref='user_form' className="row"
+              onSubmit={this.onCreateNote}>
           <input
             type="text"
+            onChange={this.titleChange}
             onFocus={this.toggle(true)}
             name="newNoteTitle"
             placeholder="Create Sticky Notes"
@@ -51,6 +65,7 @@ import { Component } from 'react';
           />
           <input
             type="text"
+            onChange={this.headerChange}
             onFocus={this.toggle(true)}
             name="newNoteValue"
             placeholder="sticky Header"
@@ -61,10 +76,10 @@ import { Component } from 'react';
             </div>
             <button
               type="submit"
+              value="submit"
               className="btn-light"
-             >
-              Done
-            </button>
+             >Submit</button>
+
           </div>
         </form>
       </div>

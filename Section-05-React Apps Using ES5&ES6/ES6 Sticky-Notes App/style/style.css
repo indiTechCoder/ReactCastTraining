@@ -20,14 +20,6 @@ body {
 }
 .notes {
   padding-top: 50px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-.cards {
-  display: flex;
-  flex-direction: row;
-  width: 200px;
 }
 .creator {
   margin-bottom: 40px;
