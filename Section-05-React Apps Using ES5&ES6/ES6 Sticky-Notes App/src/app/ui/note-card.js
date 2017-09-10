@@ -1,7 +1,6 @@
 import React from 'react';
 import { Component } from 'react';
 
-
 class NoteCard extends Component {
   constructor(props){
     super(props);
@@ -10,17 +9,18 @@ class NoteCard extends Component {
         showCheck  : false
       }
       this.toggleCheck = this.toggleCheck.bind(this);
+      this.onNoteChecked = this.onNoteChecked.bind(this);
   }
   toggleCheck() {
     this.showCheck = !this.showCheck;
   }
-  onChecked() {
-    this.checked.next(this.note);
+  onNoteChecked() {
+    this.props.onNoteChecked(this.props.note,this.props.index);
   }
   render() {
     return (
       <div
-        className="note-card row shadow-1"
+        className="note-card row shadow-1" onClick={this.onNoteChecked}
         onMouseEnter={this.toggleCheck}
         onMouseLeave={this.toggleCheck}
       >

@@ -14,6 +14,9 @@ var config = {
         filename: 'bundle.js',
         publicPath: '/dist'
     },
+    devServer: {
+        baseContent : './dist'
+    },
     module: {
         loaders: [
             {

@@ -16,19 +16,19 @@ import NotesCreator from '../ui/note-creator';
      ]
    }
    this.onCreateNote = this.onCreateNote.bind(this);
+   this.onNoteChecked = this.onNoteChecked.bind(this);
  }
   onNoteChecked(note, i) {
     this.state.notes.splice(i, 1);
     this.setState({notes: this.state.notes});
   }
-
   onCreateNote(note) {
     this.state.notes.push(note);
     this.setState({notes: this.state.notes});
   }
   renderCards(){
-    return this.state.notes.map(function(_card){
-      return (<NoteCard note={_card} className="col-xs-4" />
+    return this.state.notes.map((_card,index) => {
+      return (<NoteCard note={_card} index={index} key={index} onNoteChecked={this.onNoteChecked} className="col-xs-4" />
       );
     });
   }

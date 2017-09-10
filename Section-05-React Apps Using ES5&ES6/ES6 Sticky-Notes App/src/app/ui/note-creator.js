@@ -1,22 +1,30 @@
 import React from 'react';
-import { Component } from 'react';
+import {Component} from 'react';
 
- class NoteCreator extends Component {
-  constructor(props){
+class NoteCreator extends Component {
+  constructor(props) {
     super(props)
-      this.state = {
-          title: '',
-          value: ''
-        };
-        this.onCreateNote = this.onCreateNote.bind(this);
-        this.titleChange = this.titleChange.bind(this);
-        this.headerChange = this.headerChange.bind(this);
+    this.state = {
+      title: null,
+      value: null
+    };
+    this.onCreateNote = this
+      .onCreateNote
+      .bind(this);
+    this.titleChange = this
+      .titleChange
+      .bind(this);
+    this.headerChange = this
+      .headerChange
+      .bind(this);
   }
   onCreateNote() {
-    const { title, value } = this.state;
+    const {title, value} = this.state;
 
     if (title && value) {
-      this.createNote.next({ title, value });
+      this
+        .createNote
+        .next({title, value});
     }
 
     this.reset();
@@ -24,64 +32,58 @@ import { Component } from 'react';
   }
 
   reset() {
-    this.setState ({
-      title: '',
-      value: ''
-     });
-   }
-    toggle(value) {
-      this.fullForm = value;
+    this.setState({title: null, value: null});
+  }
+  toggle(value) {
+    this.fullForm = value;
+  }
+  titleChange(e) {
+    this.setState({title: e.target.value});
+  }
+  headerChange(e) {
+    this.setState({value: e.target.value});
+  }
+  onCreateNote() {
+    console.log(this.state.title);
+    console.log(this.state.value);
+    if (this.state.title && this.state.value) {
+      this
+        .props
+        .onCreateNote({title: this.state.title, value: this.state.value});
+      this.reset();
     }
-    titleChange(e) {
-       this.setState({title: e.target.value});
-    }
-    headerChange(e) {
-       this.setState({value: e.target.value});
-    }
-    onCreateNote(){
-      e.preventDefault();
-      e.stopPropagation()
-      console.log(this.state.title);
-      console.log(this.state.value);
 
-      this.props.onCreateNote({
-        title: this.state.title,
-        value: this.state.value
-       })
-    }
+  }
 
   render() {
     return (
       <div className="note-creator shadow-2">
-        <form ref='user_form' className="row"
-              onSubmit={this.onCreateNote}>
+        <div className="row">
           <input
             type="text"
+
             onChange={this.titleChange}
             onFocus={this.toggle(true)}
             name="newNoteTitle"
             placeholder="Create Sticky Notes"
-            className="col-xs-10 title"
-          />
+            className="col-xs-10 title"/>
           <input
+
             type="text"
             onChange={this.headerChange}
             onFocus={this.toggle(true)}
             name="newNoteValue"
             placeholder="sticky Header"
-            className="col-xs-10"
-          />
+            className="col-xs-10"/>
           <div className="actions col-xs-12 row between-xs">
-            <div className="col-xs-3">
-            </div>
-            <button
-              type="submit"
-              value="submit"
-              className="btn-light"
-             >Submit</button>
-
+            <div className="col-xs-3"></div>
           </div>
-        </form>
+          <button
+            type="submit"
+            onClick={this.onCreateNote}
+            value="submit"
+            className="btn-light">Submit</button>
+        </div>
       </div>
     );
   }
