@@ -1,5 +1,7 @@
 /node_modules/
-
+.vscode/
+.DS_Store
 bundle.js
-
+.vsocd
+*/.vscodee
 npm-debug.log
